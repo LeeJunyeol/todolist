@@ -32,13 +32,11 @@ public class TodoControllerTest {
 
 	@Test
 	public void shouldCreate() throws Exception {
-		String requestBody = "{\"todo\":\"할 일\", \"completed\":false, \"date\": 312}";
+		String requestBody = "{\"todo\":\"할 일\"}";
 
 		mvc.perform(post("/api/todo/").contentType(MediaType.APPLICATION_JSON).content(requestBody))
 				.andExpect(status().isCreated()).andExpect(jsonPath("$.id").exists())
-				.andExpect(jsonPath("$.todo").value("할 일"))
-				.andExpect(jsonPath("$.completed").value(false))
-				.andExpect(jsonPath("$.date").value(312));
+				.andExpect(jsonPath("$.todo").value("할 일"));
 	}
 
 }

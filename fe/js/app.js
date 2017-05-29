@@ -10,10 +10,8 @@
 
 
     // ajax에서 request 보낼 todo object
-    function RequestTodo(todo, completed, date){
+    function RequestTodo(todo){
         this.todo = todo;
-        this.completed = completed;
-        this.date = date;
     }
 
     // todo object
@@ -80,7 +78,7 @@
         if (e.which == 13) {    // 엔터키 = 13
             var newTodoVal = $('.new-todo').val();  // 입력 값
             if(newTodoVal != ""){
-                var requestTodo = new RequestTodo(newTodoVal, false, $.now());  // 입력 값, false(완료X), 현재시간
+                var requestTodo = new RequestTodo(newTodoVal);  // 입력 값, false(완료X), 현재시간
                 var jsonData = JSON.stringify(requestTodo);
                 $.ajax({
                     method: "POST",

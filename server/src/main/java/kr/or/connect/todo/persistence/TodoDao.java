@@ -30,7 +30,8 @@ public class TodoDao {
 		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 		this.insertAction = new SimpleJdbcInsert(dataSource)
 				.withTableName("todo")
-				.usingGeneratedKeyColumns("id");
+				.usingGeneratedKeyColumns("id")
+				.usingColumns("todo");
 	}
 	
 	public Integer insert(ToDo todo){

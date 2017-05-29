@@ -12,6 +12,11 @@ public class ToDo {
 		super();
 	}
 
+	public ToDo(String todo) {
+		super();
+		this.todo = todo;
+	}
+	
 	public ToDo(String todo, Boolean completed, Timestamp date) {
 		super();
 		this.todo = todo;
